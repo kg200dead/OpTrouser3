@@ -1,0 +1,32 @@
+private ["_bulker", "_dropitem", "_parachute", "_vector", "_vectorLength", "_unitvector", "_cosmetic", "_bob"];
+_bulker = vehicle (_this select 0);
+_dropitem = _this select 1;
+_dropitem allowDammage false;
+
+_bob = format ["Box %1 dropping from %2", _dropitem, _bulker];
+[_bob, "dfKitDrop", [false, true, false] ] call CBA_fnc_debug;
+
+_parachute = createVehicle ["ParachuteWest", getPosATL _bulker, [], 0, "NONE"]; 
+//_parachute = "ParachuteWest" createVehicle getPosATL _bulker;
+_vector = velocity _bulker;
+_vectorLength = [0,0,0] distance _vector;
+if (_vectorLength == 0) then {_vectorLength = .5};
+_unitvector = [(_vector select 0) / _vectorLength, (_vector select 1) / _vectorLength, (_vector select 2) / _vectorLength];
+_parachute setPosATL [(getPosATL _bulker select 0) - (10 * (_unitvector select 0)),(getPosATL _bulker select 1) - (10 * (_unitvector select 1)), (getPosATL _bulker select 2) - (10 * (_unitvector select 2))];
+_parachute setVelocity _unitvector;
+_dropitem attachTo [_parachute, [0,0,0], "paraEnd"];
+[_dropitem, 89.9, 0] call BIS_fnc_setPitchBank;
+sleep 8;
+waitUntil {sleep 1.3; ((getPosATL _parachute select 2) < 5.7) || {(velocity _parachute select 2) > -.07}};
+sleep 5;
+detach _dropitem;    
+_dropitem setVelocity [0,0,0];
+_dropitem setVectorUp [0,0,1];
+_dropitem setPosATL [getPosATL _dropitem select 0, getPosATL _dropitem select 1, 0.1];
+_cosmetic = createVehicle ["I44_parachute_w_ground2", getPosATL _dropitem, [], 0, "NONE"];
+_dropitem allowDammage true;
+sleep 2;
+_dropitem setPosATL [getPosATL _dropitem select 0, getPosATL _dropitem select 1, 0.05];
+_vector = nil;
+_vectorLength = nil;
+_unitvector = nil;

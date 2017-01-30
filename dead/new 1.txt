@@ -1,0 +1,33 @@
+private ["_blokes", "_kite", "_kites", "_grp", "_i", "_j", "_bob", "_stuff", "_item"];
+_kites =[];
+_blokes =[];
+{
+	_kites set [count _kites, _this select _x];
+} foreach _this;
+//DEBUG
+_bob = format ["_kites = %1", _kites];
+[ _bob, "drop_setup_kites", [true, true, false] ] call CBA_fnc_debug;
+//END
+{
+		_x animateDoor ['Door_1_source', 1];
+} forEach _kites;
+
+
+{
+	_blokes set [count _blokes, assignedCargo _x];
+} foreach _kites;
+//DEBUG
+_bob = format ["_blokes = %1", _blokes];
+[ _bob, "drop_setup_chaps", [true, true, false] ] call CBA_fnc_debug;
+//END
+	
+	
+// Get paras to jump out and open their chutes
+for "_i" from 0 to 3 do {
+	_bob = format ["_boys of %1 = %2", _kites select _i, assignedCargo (_kites select _i)];
+	[ _bob, "drop_setup", [true, true, false] ] call CBA_fnc_debug;
+	{
+		_x action ["Eject", vehicle _x];
+		_x action ["OpenParachute", _x];
+		
+statement = "this animateDoor ['Door_1_source', 1]";

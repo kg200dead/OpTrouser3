@@ -1,0 +1,194 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, siren">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Start",0,4346,-335.798676,-490.862457,-245.798798,-440.862427,0.000000,"Start"};
+item1[] = {"wail",2,250,-293.247009,-152.110504,-203.247040,-102.110451,0.000000,"wail"};
+item2[] = {"All_clear",2,250,-41.448097,-280.702911,48.551918,-230.702911,0.000000,"All clear"};
+item3[] = {"time_up",8,218,-426.577637,-235.441086,-336.577576,-185.441101,0.000000,"time up"};
+item4[] = {"siren_off",8,218,-211.592163,-232.179565,-121.592201,-182.179688,1.000000,"siren_off"};
+item5[] = {"siren_on",8,218,-424.738739,-314.856445,-334.738647,-264.856445,1.000000,"siren_on"};
+item6[] = {"siren_off_wait",8,218,-177.353317,-396.628174,-87.353226,-346.628174,0.000000,"siren_off_wait"};
+item7[] = {"Waiting",2,250,-296.388184,-398.698334,-206.388153,-348.698334,0.000000,"Waiting"};
+item8[] = {"headless_or_dedi",8,218,-172.603027,-497.965881,-82.603073,-447.965881,10.000000,"headless or dedi"};
+item9[] = {"Exit",1,250,-0.329861,-421.339569,89.670166,-371.339600,0.000000,"Exit"};
+link0[] = {0,5};
+link1[] = {0,6};
+link2[] = {0,8};
+link3[] = {1,3};
+link4[] = {1,4};
+link5[] = {2,5};
+link6[] = {2,6};
+link7[] = {3,1};
+link8[] = {4,2};
+link9[] = {5,1};
+link10[] = {6,7};
+link11[] = {7,5};
+link12[] = {7,6};
+link13[] = {8,9};
+globals[] = {0.000000,0,0,0,0,640,480,1,52,6316128,1,-521.603516,143.577820,-24.360046,-568.612854,1224,899,1};
+window[] = {2,-1,-1,-32000,-32028,1173,176,1618,176,3,1241};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "siren";
+  class States
+  {
+    /*%FSM<STATE "Start">*/
+    class Start
+    {
+      name = "Start";
+      init = /*%FSM<STATEINIT""">*/"private [""_siren"",""_timeout"",""_wail""];" \n
+       "_siren = _this select 0;" \n
+       "if (isNil ""siren_on"") then {siren_on = false};" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "headless_or_dedi">*/
+        class headless_or_dedi
+        {
+          priority = 10.000000;
+          to="Exit";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!hasinterface;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "siren_on">*/
+        class siren_on
+        {
+          priority = 1.000000;
+          to="wail";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"siren_on;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "siren_off_wait">*/
+        class siren_off_wait
+        {
+          priority = 0.000000;
+          to="Waiting";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!siren_on;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "wail">*/
+    class wail
+    {
+      name = "wail";
+      init = /*%FSM<STATEINIT""">*/"_wail = _siren say3D [""raidloop"",1,1];" \n
+       "_timeout = [] spawn {sleep 25;};" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "siren_off">*/
+        class siren_off
+        {
+          priority = 1.000000;
+          to="All_clear";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!siren_on;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "time_up">*/
+        class time_up
+        {
+          priority = 0.000000;
+          to="wail";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"scriptdone _timeout;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "All_clear">*/
+    class All_clear
+    {
+      name = "All_clear";
+      init = /*%FSM<STATEINIT""">*/"_wail =_siren say3D [""allclear"",1,1];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/"scriptdone _timeout;"/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "siren_on">*/
+        class siren_on
+        {
+          priority = 1.000000;
+          to="wail";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"siren_on;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "siren_off_wait">*/
+        class siren_off_wait
+        {
+          priority = 0.000000;
+          to="Waiting";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!siren_on;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Waiting">*/
+    class Waiting
+    {
+      name = "Waiting";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "siren_on">*/
+        class siren_on
+        {
+          priority = 1.000000;
+          to="wail";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"siren_on;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "siren_off_wait">*/
+        class siren_off_wait
+        {
+          priority = 0.000000;
+          to="Waiting";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!siren_on;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Exit">*/
+    class Exit
+    {
+      name = "Exit";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Start";
+  finalStates[] =
+  {
+    "Exit",
+  };
+};
+/*%FSM</COMPILE>*/
