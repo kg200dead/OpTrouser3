@@ -1,0 +1,440 @@
+/*
+class CfgIdentities
+{
+	class Able_1
+	{
+		name="John Hegley";
+		face="Face113_camo2_PMC";
+		glasses="None";
+		speaker="Male03_BAF"; 
+		pitch=1.0;
+	};
+	class Able_2
+	{
+		name="Charles Prentiss";
+		face="Face05_camo3_EP1";
+		glasses="None";
+		speaker="Male01_BAF";
+		pitch=1.0;
+	};
+	class Able_3
+	{
+		name="Martin McCabe";
+		face="Face109_camo5_PMC";
+		glasses="None";
+		speaker="Male03_GB_EN_PMC";
+		pitch=1.0;
+	};
+	class Able_4
+	{
+		name="Jack Dee";
+		face="Face119_camo3_PMC";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=1.0;
+	};
+	class Able_5
+	{
+		name="Dylan Moran";
+		face="Face07_camo4_EP1";
+		glasses="None";
+		speaker="Male01_GB_EN_PMC";
+		pitch=0.9;
+	};
+	class Able_6
+	{
+		name="William Bailey";
+		face="Face81_camo2";
+		glasses="None";
+		speaker="Male01_BAF";
+		pitch=0.9;
+	};
+	class Able_7
+	{
+		name="Norman Lovett";
+		face="Face15_camo5";
+		glasses="None";
+		speaker="Male02_BAF";
+		pitch=0.9;
+	};
+	class Able_8
+	{
+		name="Matt Berry";
+		face="Face120_camo4_PMC";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=0.9;
+	};
+	class Able_9
+	{
+		name="Arthur Smith";
+		face="Face01_camo3";
+		glasses="None";
+		speaker="Male03_GB_EN_PMC";
+		pitch=1.1;
+	};
+	class Able_10
+	{
+		name="Philip Nice";
+		face="Face26_camo3";
+		glasses="None";
+		speaker="Male01_BAF";
+		pitch=1.1;
+	};
+	class Able_11
+	{
+		name="Kevin Eldon";
+		face="Face04_camo4";
+		glasses="None";
+		speaker="Male01_GB_EN_PMC";
+		pitch=1.1;
+	};
+	class Able_12
+	{
+		name="Tony Hawks";
+		face="Face71_camo5";
+		glasses="None";
+		speaker="Male02_BAF";
+		pitch=1.1;
+	};
+	class Baker_1
+	{
+		name="Bernard Black";
+		face="Face116_camo4_PMC";
+		glasses="None";
+		speaker="Male03_BAF";
+		pitch=1.0;
+	};
+	class Baker_2
+	{
+		name="Harvey Williams";
+		face="Face108_camo4_PMC";
+		glasses="None";
+		speaker="Male02_BAF";
+		pitch=1.0;
+	};
+	class Baker_3
+	{
+		name="Jack Docherty";
+		face="Face11_camo2";
+		glasses="None";
+		speaker="Male03_GB_EN_PMC";
+		pitch=1.0;
+	};
+	class Baker_4
+	{
+		name="Moray Hunter";
+		face="Face122_camo2_PMC";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=1.0;
+	};
+	class Baker_5
+	{
+		name="Sean Lock";
+		face="Face55_camo3";
+		glasses="None";
+		speaker="Male01_GB_EN_PMC";
+		pitch=0.9;
+	};
+	class Baker_6
+	{
+		name="Nicholas Burns";
+		face="Face123_camo3_PMC";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=0.9;
+	};
+	class Baker_7
+	{
+		name="Lee Evans";
+		face="Face117_camo5_PMC";
+		glasses="None";
+		speaker="Male01_BAF";
+		pitch=0.9;
+	};
+	class Baker_8
+	{
+		name="William Hicks";
+		face="Face91_camo3";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=0.9;
+	};
+	class Baker_9
+	{
+		name="Alastair Murray";
+		face="Face01_camo2";
+		glasses="None";
+		speaker="Male02_BAF";
+		pitch=1.1;
+	};
+	class Baker_10
+	{
+		name="Frank Hovis";
+		face="Face08_camo2_EP1";
+		glasses="None";
+		speaker="Male01_BAF";
+		pitch=1.1;
+	};
+	class Baker_11
+	{
+		name="John Sparkes";
+		face="Face114_camo2_PMC";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=1.1;
+	};
+	class Baker_12
+	{
+		name="Paul Merton";
+		face="Face21_camo4";
+		glasses="None";
+		speaker="Male01_GB_EN_PMC";
+		pitch=1.1;
+	};
+	class Charlie_1
+	{
+		name="Edward Monsoon";
+		face="Face08_camo5";
+		glasses="None";
+		speaker="Male03_BAF";
+		pitch=1.0;
+	};
+	class Charlie_2
+	{
+		name="Rory McGrath";
+		face="Face45_camo5";
+		glasses="None";
+		speaker="Male03_GB_EN_PMC";
+		pitch=1.0;
+	};
+	class Charlie_3
+	{
+		name="James Mulville";
+		face="Face111_camo4_PMC";
+		glasses="None";
+		speaker="Male01_GB_EN_PMC";
+		pitch=1.0;
+	};
+	class Charlie_4
+	{
+		name="Barry Welsh";
+		face="Face02_camo4";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=1.0;
+	};
+	class Charlie_5
+	{
+		name="Dan Ashcroft";
+		face="Face05_camo4";
+		glasses="None";
+		speaker="Male01_BAF";
+		pitch=1.1;
+	};
+	class Charlie_6
+	{
+		name="Calum Gilhooley";
+		face="Face05_camo2";
+		glasses="None";
+		speaker="Male03_GB_EN_PMC";
+		pitch=1.1;
+	};
+	class Charlie_7
+	{
+		name="Richard Ayoade";
+		face="Face31_camo2";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=1.1;
+	};
+	class Charlie_8
+	{
+		name="Robert Newman";
+		face="Face41_camo4";
+		glasses="None";
+		speaker="Male02_BAF";
+		pitch=1.1;
+	};
+	class Charlie_9
+	{
+		name="Peter Cook";
+		face="Face25_camo5";
+		glasses="None";
+		speaker="Male01_BAF";
+		pitch=0.9;
+	};
+	class Charlie_10
+	{
+		name="Noel Fielding";
+		face="Face124_camo4_PMC";
+		glasses="None";
+		speaker="Male02_BAF";
+		pitch=0.9;
+	};
+	class Charlie_11
+	{
+		name="Julian Barrett";
+		face="Face115_camo3_PMC";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=0.9;
+	};
+	class Charlie_12
+	{
+		name="Jeremy Hardy";
+		face="Face112_camo5_PMC";
+		glasses="None";
+		speaker="Male03_BAF";
+		pitch=0.9;
+	};
+	class Dog_1
+	{
+		name="Mark Heap";
+		face="Face118_camo2_PMC";
+		glasses="None";
+		speaker="Male03_BAF";
+		pitch=1.0;
+	};
+	class Dog_2
+	{
+		name="Dave Brown";
+		face="Face06_camo5";
+		glasses="None";
+		speaker="Male02_BAF";
+		pitch=1.0;
+	};
+	class Dog_3
+	{
+		name="Richard Fulcher";
+		face="Face35_camo3";
+		glasses="None";
+		speaker="Male02_GB_EN_PMC";
+		pitch=1.0;
+	};
+	class Dog_4
+	{
+		name="Michael Pennington";
+		face="Face121_camo5_PMC";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=1.0;
+	};
+	class Dog_5
+	{
+		name="Graham Duff";
+		face="Face09_camo3_EP1";
+		glasses="None";
+		speaker="Male01_GB_EN_PMC";
+		pitch=0.9;
+	};
+	class Dog_6
+	{
+		name="Seymour Mace";
+		face="Face61_camo4";
+		glasses="None";
+		speaker="Male01_BAF";
+		pitch=0.9;
+	};
+	class Dog_7
+	{
+		name="Ryan Pope";
+		face="Face51_camo2";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=0.9;
+	};
+	class Dog_8
+	{
+		name="Tom Goodman";
+		face="Face65_camo5";
+		glasses="None";
+		speaker="Male02_BAF";
+		pitch=0.9;
+	};
+	class Dog_9
+	{
+		name="James Foster";
+		face="Face110_camo3_PMC";
+		glasses="None";
+		speaker="Male01_BAF";
+		pitch=1.1;
+	};
+	class Dog_10
+	{
+		name="David Sant";
+		face="Face07_camo3";
+		glasses="None";
+		speaker="Male02_BAF";
+		pitch=1.1;
+	};
+	class Dog_11
+	{
+		name="David Bradley";
+		face="Face06_camo2_EP1";
+		glasses="None";
+		speaker="Male03_GB_EN_PMC";
+		pitch=1.1;
+	};
+	class Dog_12
+	{
+		name="Ben Crompton";
+		face="Face03_camo5";
+		glasses="None";
+		speaker="Male04_BAF";
+		pitch=1.1;
+	};
+};
+*/
+
+class CfgMusic
+{
+	tracks[] = {beastly};
+	class beastly
+	{
+		name = "beastly";
+		sound[] = {\music\beastly.ogg, db + 10, 1.0};
+		titles[] = {0, ""};
+	};
+};
+
+/*
+class Weapons
+{
+	class ItemMap							{count =  3;};
+	class Binocular							{count =  3;};
+	class I44_BrenMk1						{count =  3;};
+	class I44_WebleyMk6						{count =  3;};
+	class I44_StenMk2S						{count =  6;};
+	class I44_StenMk5						{count =  3;};
+	class I44_LeeEnfieldNo4Mk1				{count =  3;};
+	class I44_LeeEnfieldNo4Mk1_T			{count =  3;};
+	class I44_MedpackLarge					{count = 12;};
+	class I44_MedpackSmall					{count = 12;};
+};
+class Magazines
+{
+	class I44_6rd_12x20R_Ball_WebleyMk6		{count = 48;};
+	class I44_10rd_77x56R_Ball_LeeEnfield	{count = 48;};
+	class I44_30rd_77x56R_Mix_Bren			{count = 48;};
+	class I44_30rd_77x56R_Ball_Bren			{count = 48;};
+	class I44_30rd_77x56R_Tracer_Bren		{count = 48;};
+	class I44_32rd_9x19_Ball_Sten			{count = 48;};
+	class I44_32rd_9x19_BallSS_Sten			{count = 64;};
+};
+class Backpacks
+{
+	class I44_Bag_M2MortarBP				{count =  1;};
+	class I44_Bag_M2Mortar					{count =  1;};
+	class I44_Bag_Vickers					{count =  1;};
+	class I44_Bag_TripodV					{count =  1;};
+	class I44_Bag_BABSten					{count =  3;};
+	class I44_Bag_BABBren					{count =  3;};
+	class I44_Bag_BABMedic					{count =  3;};
+	class I44_Bag_BABPIAT					{count =  3;};
+	class I44_Bag_BABRadio					{count =  3;};
+	class I44_Bag_BABNo4Mk1					{count =  6;};
+	class I44_Bag_BABBergen					{count = 12;};
+};
+*/

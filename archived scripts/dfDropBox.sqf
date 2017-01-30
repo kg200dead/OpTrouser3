@@ -1,0 +1,15 @@
+["Fired", "dfDropbox", [false, true, false]] call CBA_fnc_debug;
+[Flight_1, missionNamespace getVariable "f1c1"] spawn dfKitDrop;
+[Flight_2, missionNamespace getVariable "f2c1"] spawn dfKitDrop;
+[Flight_3, missionNamespace getVariable "f3c1"] spawn dfKitDrop; 
+[Flight_4, missionNamespace getVariable "f4c1"] spawn dfKitDrop;
+sleep 0.4;
+[Flight_1, missionNamespace getVariable "f1c2"] spawn dfKitDrop;
+[Flight_2, missionNamespace getVariable "f2c2"] spawn dfKitDrop;
+[Flight_3, missionNamespace getVariable "f3c2"] spawn dfKitDrop; 
+[Flight_4, missionNamespace getVariable "f4c2"] spawn dfKitDrop;
+sleep 0.4;
+[Flight_1, missionNamespace getVariable "f1c3"] spawn dfKitDrop;
+[Flight_2, missionNamespace getVariable "f2c3"] spawn dfKitDrop;
+[Flight_3, missionNamespace getVariable "f3c3"] spawn dfKitDrop; 
+[Flight_4, missionNamespace getVariable "f4c3"] spawn dfKitDrop;

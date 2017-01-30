@@ -1,0 +1,84 @@
+﻿OnLoadIntro = "COOP 48 Operation Trouser 3.0";
+//OnLoadMission = "O P E R A T I O N   T R O U S E R   3 . 0"; 
+
+author = "-dead-";
+OnLoadName = "Operation Trouser 3.0";
+OnLoadMission = "Airborne Assault of Altis prior to beach landings.";
+loadScreen = "img\trouser.jpg";
+overviewText = "You and a few hundred comrades are tasked with capturing two towns vital to the amphibious invasion of Altis";
+
+
+corpseLimit = 64;
+corpseRemovalMinTime = 600; //seconds
+corpseRemovalMaxTime = 3600; //seconds
+wreckLimit = 32;
+wreckRemovalMinTime = 600; //seconds
+wreckRemovalMaxTime = 7200; //seconds
+
+briefing = 1;
+respawn="4";
+respawndelay=3;
+ShowGPS = 0;
+showMap = 1;
+debriefing=1;
+disabledAI=false;
+enableItemsDropping = 0;
+disableChannels[]={0,1,2,6};
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 49;
+	playerCountMultipleOf = 1;
+};
+class Params 
+{
+	class Grass 
+	{
+		title = "Grass Options";
+		values[] = {0, 1, 2, 3, 4};
+		texts[] = {"No Grass", "A little grass", "Medium Grass", "Lots of Grass", "Full Grass"};
+		default = 2;
+	};
+	class Viewdist 
+	{
+		title = "View Distance";
+		values[] = {500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000 ,7500, 8000, 8500, 9000, 9500, 10000};
+		texts[] = {"500m", "1000m", "1500m", "2000m", "2500m", "3000m", "3500m", "4000m", "4500m", "5000m", "5500m", "6000m", "6500m", "7000m", "7500m", "8000", "8500m", "9000m", "9500m", "10000m"};
+		default = 3000;
+	};
+	class HeadlessClient
+	{
+		title = "Headless Client";
+		values[]= {0,1};
+		texts[] = {"OFF","ON"};
+		default = 1;
+	};
+	class ACRE
+	{
+		title = "A.C.R.E.";
+		values[]= {0,1};
+		texts[] = {"OFF","ON"};
+		default = 0;
+	};
+};
+
+
+class CfgSounds
+{
+	sounds[] = {raidloop, allclear};   	
+	class raidloop
+	{
+		name = "raidloop";
+		sound[] = {\sounds\raidloop.ogg, db+10, 1.0};
+		titles[] = {0, ""};
+	};
+	class allclear
+	{
+		name = "allclear";
+		sound[] = {\sounds\allclear.ogg, db+10, 1.0};
+		titles[] = {0, ""};
+	};	
+};
+
+allowSubordinatesTakeWeapons = 1;
